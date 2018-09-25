@@ -13,7 +13,7 @@ export class Countdown extends Component {
     clearInterval(this.intervalId);
   }
   render() {
-    if (!this.state.timeLeft) return null;
+    if (!this.state) return null;
     return this.props.children(this.state);
   }
 }
