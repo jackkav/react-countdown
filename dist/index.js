@@ -613,7 +613,7 @@ class Countdown extends react.Component {
   }
 
   render() {
-    if (!this.state.timeLeft) return null;
+    if (!this.state) return null;
     return this.props.children(this.state);
   }
 

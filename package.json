@@ -1,6 +1,6 @@
 {
   "name": "@jackkav/react-countdown",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "A reusable React component to abstract away the countdown logic so you can focus on the layout.",
   "repository": {
     "type": "git",
@@ -23,12 +23,18 @@
     "build": "rollup -c",
     "build:watch": "rollup -c -w"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "jest && rollup -c"
+    }
+  },
   "devDependencies": {
     "@babel/cli": "^7.1.0",
     "@babel/core": "^7.1.0",
     "@babel/preset-env": "^7.1.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
+    "husky": "^1.0.0-rc.15",
     "jest": "^23.6.0",
     "react": "^16.5.2",
     "regenerator-runtime": "^0.12.1",
