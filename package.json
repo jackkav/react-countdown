@@ -1,0 +1,43 @@
+{
+  "name": "@jackkav/react-countdown",
+  "version": "1.1.0",
+  "description": "A fun addition to your loading screen, based on The Sims",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jackkav/react-countdown.git"
+  },
+  "main": "dist/index.js",
+  "author": "Jack Kavanagh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jackkav/react-countdown/issues"
+  },
+  "keywords": [
+    "loading",
+    "react",
+    "react-component"
+  ],
+  "homepage": "https://github.com/jackkav/react-countdown",
+  "scripts": {
+    "test": "jest",
+    "build": "rollup -c",
+    "build:watch": "rollup -c -w"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.0",
+    "@babel/core": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
+    "jest": "^23.6.0",
+    "react": "^16.5.2",
+    "regenerator-runtime": "^0.12.1",
+    "rollup": "^0.66.2",
+    "rollup-plugin-babel": "^4.0.3",
+    "rollup-plugin-commonjs": "^9.1.8",
+    "rollup-plugin-node-resolve": "^3.4.0"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0"
+  }
+}
