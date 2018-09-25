@@ -50,6 +50,7 @@ This will watch for changes and build the minified script.
 
 - [x] basic unit tests
 - [x] babel 7
+- [x] fix initial render flash
 - [ ] define API
-- [ ] fix initial render flash
 - [ ] simplify
+- [ ] days and years

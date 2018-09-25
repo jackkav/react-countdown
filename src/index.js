@@ -1,33 +1,23 @@
 import { Component } from "react";
 
 export class Countdown extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      timeLeft: {
-        hours: 0,
-        minutes: 0,
-        seconds: 0
-      }
-    };
-  }
   componentDidMount() {
-    let seconds = secondsBetweenTwoDates(this.props.date, new Date());
-    let timeLeft = secondsToTimeleft(seconds);
     this.intervalId = setInterval(() => {
-      seconds = secondsBetweenTwoDates(this.props.date, new Date());
+      let seconds = secondsBetweenTwoDates(this.props.date, new Date());
       if (seconds <= 0) this.setState({ hasStopped: true });
-      timeLeft = formatTimes(secondsToTimeleft(seconds));
+      let timeLeft = formatTimes(secondsToTimeleft(seconds));
       this.setState({ timeLeft });
-    }, 100);
+    }, 1000);
   }
   componentWillUnmount() {
     clearInterval(this.intervalId);
   }
   render() {
+    if (!this.state.timeLeft) return null;
     return this.props.children(this.state);
   }
 }
+
 export const formatTimes = timeLeft =>
   Object.assign(
     ...Object.entries(timeLeft).map(([k, v]) => ({
