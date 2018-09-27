@@ -20,28 +20,25 @@
   "homepage": "https://github.com/jackkav/react-countdown",
   "scripts": {
     "test": "jest",
-    "build": "rollup -c",
-    "build:watch": "rollup -c -w"
+    "build": "./node_modules/.bin/babel src  --out-dir dist --ignore 'src/**/*.test.js'",
+    "build:watch": "./node_modules/.bin/babel src --out-dir dist --ignore 'src/**/*.test.js' --watch"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "jest && rollup -c"
+      "pre-commit": "jest && ./node_modules/.bin/babel src  --out-dir dist --ignore 'src/**/*.test.js'"
     }
   },
   "devDependencies": {
     "@babel/cli": "^7.1.0",
     "@babel/core": "^7.1.0",
     "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
     "husky": "^1.0.0-rc.15",
     "jest": "^23.6.0",
     "react": "^16.5.2",
-    "regenerator-runtime": "^0.12.1",
-    "rollup": "^0.66.2",
-    "rollup-plugin-babel": "^4.0.3",
-    "rollup-plugin-commonjs": "^9.1.8",
-    "rollup-plugin-node-resolve": "^3.4.0"
+    "regenerator-runtime": "^0.12.1"
   },
   "dependencies": {
     "@babel/polyfill": "^7.0.0"

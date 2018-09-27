@@ -20,8 +20,8 @@ export class Countdown extends Component {
 
 export const formatTimes = timeLeft =>
   Object.assign(
-    ...Object.entries(timeLeft).map(([k, v]) => ({
-      [k]: v.toFixed(0).padStart(2, "0")
+    ...Object.entries(timeLeft).map(([key, value]) => ({
+      [key]: value.toFixed(0).padStart(2, "0")
     }))
   );
 
