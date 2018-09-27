@@ -1,23 +1,5 @@
 import { Component } from "react";
 
-export class Countdown extends Component {
-  componentDidMount() {
-    this.intervalId = setInterval(() => {
-      let seconds = secondsBetweenTwoDates(this.props.date, new Date());
-      if (seconds <= 0) this.setState({ hasStopped: true });
-      let timeLeft = formatTimes(secondsToTimeleft(seconds));
-      this.setState({ timeLeft });
-    }, 1000);
-  }
-  componentWillUnmount() {
-    clearInterval(this.intervalId);
-  }
-  render() {
-    if (!this.state) return null;
-    return this.props.children(this.state);
-  }
-}
-
 export const formatTimes = timeLeft =>
   Object.assign(
     ...Object.entries(timeLeft).map(([key, value]) => ({
@@ -45,3 +27,28 @@ export const secondsToTimeleft = seconds => {
   timeLeft.seconds = seconds;
   return timeLeft;
 };
+
+export class Countdown extends Component {
+  constructor(props) {
+    super(props);
+    this.state = this.getTimeLeftAndStoppedState();
+  }
+  componentDidMount() {
+    Countdown.intervalId = setInterval(() => {
+      this.setState({ ...this.getTimeLeftAndStoppedState() });
+    }, 1000);
+  }
+  componentWillUnmount() {
+    clearInterval(Countdown.intervalId);
+  }
+  getTimeLeftAndStoppedState() {
+    const seconds = secondsBetweenTwoDates(this.props.date, new Date());
+    if (seconds <= 0) return { hasStopped: true, timeLeft: { hours: '00', minutes: '00', seconds: '00' } };
+    return { hasStopped: false, timeLeft: formatTimes(secondsToTimeleft(seconds)) };
+  }
+  render() {
+    return this.props.children({ ...this.state });
+  }
+}
+
+
