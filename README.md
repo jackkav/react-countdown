@@ -51,6 +51,7 @@ This will watch for changes and build the minified script.
 - [x] basic unit tests
 - [x] babel 7
 - [x] fix initial render flash
-- [ ] define API
+- [ ] use lint staged to create dist?
+- [ ] clearly define API
 - [ ] simplify
 - [ ] days and years
