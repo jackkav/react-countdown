@@ -1,6 +1,6 @@
 {
   "name": "@jackkav/react-countdown",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "A reusable React component to abstract away the countdown logic so you can focus on the layout.",
   "repository": {
     "type": "git",
