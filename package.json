@@ -36,7 +36,7 @@
     "babel-jest": "23.6.0",
     "husky": "1.1.4",
     "jest": "23.6.0",
-    "react": "16.6.3",
+    "react": "16.14.0",
     "regenerator-runtime": "0.13.1"
   },
   "dependencies": {
